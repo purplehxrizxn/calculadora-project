@@ -3,7 +3,7 @@ class CalcController {
 
         // _ é a convenção para atributo privado
         this._displayCalc = '0'
-        this._dataAtual
+        this._currentDate
 
     }
 
@@ -16,7 +16,7 @@ class CalcController {
     }
 
     get dataAtual(){
-        return this._dataAtual
+        return this._currentDate
     }
     set dataAtual(valor){
         this._dataAtual = valor
