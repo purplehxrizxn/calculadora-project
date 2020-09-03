@@ -17,6 +17,12 @@ class CalcController {
         }, 1000)
     }
 
+    initButtonsEvents(){
+        /*o querySelector atende a apenas um elemento e o 
+        querySelectorAll atende a todos */
+        document.querySelectorAll('#buttons > g, #parts > g')
+    }
+
     setDisplayDateTime(){
         this.displayDate = this.currentDate.toLocaleDateString('pt-BR')
         this.displayTime = this.currentDate.toLocaleTimeString('pt-BR')
