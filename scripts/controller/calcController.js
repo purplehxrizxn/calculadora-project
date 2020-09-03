@@ -8,6 +8,7 @@ class CalcController {
         this._timeEl = document.querySelector("#hora")
         this._currentDate
         this.initialize()
+        this.initButtonsEvents()
 
     }
 
@@ -17,10 +18,28 @@ class CalcController {
         }, 1000)
     }
 
+    addEventListenerAll(element, events, fn){
+        events.split(' ').forEach(event => {
+            element.addEventListener(event, fn, false)
+        })
+    }
+
     initButtonsEvents(){
         /*o querySelector atende a apenas um elemento e o 
         querySelectorAll atende a todos */
-        document.querySelectorAll('#buttons > g, #parts > g')
+        let buttons = document.querySelectorAll('#buttons > g, #parts > g')
+        
+        // a partir de 2 argumentos, colocar entre parenteses
+        buttons.forEach((btn, index) => {
+
+            this.addEventListenerAll(btn, 'click drag', e =>{
+                console.log(btn.className.baseVal)
+            })
+
+            this.addEventListenerAll(btn, 'mouseover mouseup mousedown', e =>{
+                btn.style.cursor = 'pointer'
+            })
+        })
     }
 
     setDisplayDateTime(){
