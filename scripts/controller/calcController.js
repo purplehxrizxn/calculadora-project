@@ -4,7 +4,19 @@ class CalcController {
         // _ é a convenção para atributo privado
         this._displayCalc = '0'
         this._currentDate
+        this.initialize()
 
+    }
+
+    initialize(){
+        let displayCalcEl = document.querySelector("#display")
+        let dateEl = document.querySelector("#data")
+        let timeEl = document.querySelector("#hora")
+
+        // innerHTML = manipula os arquivos dentro do HTML
+        displayCalcEl.innerHTML = '4567'
+        dateEl.innerHTML = '02/09/20'
+        timeEl.innerHTML = '23:59'
     }
 
     get displayCalc(){
